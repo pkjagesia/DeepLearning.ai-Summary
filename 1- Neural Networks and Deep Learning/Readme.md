@@ -174,27 +174,28 @@ Here are the course summary as its given on the course [link](https://www.course
 
 - We want to predict `w` and `b` that minimize the cost function.
 - Our cost function is convex.
-- First we initialize `w` and `b` to 0,0 or initialize them to a random value in the convex function and then try to improve the values the reach minimum value.
-- In Logistic regression people always use 0,0 instead of random.
+- First we initialize `w` and `b` to 0,0 or initialize them to a random value in the convex function and then try to improve the values to the reach minimum value.
+- In Logistic regression, people always use 0,0 instead of random.
 - The gradient decent algorithm repeats: `w = w - alpha * dw`
-  where alpha is the learning rate and `dw` is the derivative of `w` (Change to `w`)
+  where alpha is the learning rate and `dw` is the derivative of `w` (Slope of cost function wrt `w`)
   The derivative is also the slope of `w`
-- Looks like greedy algorithms. the derivative give us the direction to improve our parameters.
+- Looks like greedy algorithms. The derivative give us the direction to improve our parameters.
 
 
 - The actual equations we will implement:
   - `w = w - alpha * d(J(w,b) / dw)`        (how much the function slopes in the w direction)
-  - `b = b - alpha * d(J(w,b) / db)`        (how much the function slopes in the d direction)
+  - `b = b - alpha * d(J(w,b) / db)`        (how much the function slopes in the b direction)
 
 ### Derivatives
 
-- We will talk about some of required calculus.
+- We will talk about some of the required calculus.
 - You don't need to be a calculus geek to master deep learning but you'll need some skills from it.
 - Derivative of a linear line is its slope.
   - ex. `f(a) = 3a`                    `d(f(a))/d(a) = 3`
   - if `a = 2` then `f(a) = 6`
-  - if we move a a little bit `a = 2.001` then `f(a) = 6.003` means that we multiplied the derivative (Slope) to the moved area and added it to the last result.
-
+  - if we move `a` a little bit `a = 2.001` then `f(a) = 6.003` means that derivative/slope is the relative increase/decrease in the function wrt an infinitesimal small change in x.
+ 
+ 
 ### More Derivatives examples
 
 - `f(a) = a^2`  ==> `d(f(a))/d(a) = 2a`
