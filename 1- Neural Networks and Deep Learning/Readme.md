@@ -297,6 +297,12 @@ Here are the course summary as its given on the course [link](https://www.course
 ### Vectorizing Logistic Regression
 
 - We will implement Logistic Regression using one for loop then without any for loop.
+
+```
+  dw = np.zeros((n,1))
+  dw += x(i) * dz(i)
+ ```
+
 - As an input we have a matrix `X` and its `[Nx, m]` and a matrix `Y` and its `[Ny, m]`.
 - We will then compute at instance `[z1,z2...zm] = W' * X + [b,b,...b]`. This can be written in python as:
 
@@ -321,8 +327,12 @@ Here are the course summary as its given on the course [link](https://www.course
   - Try to not use the rank one matrix in ANN
   - Don't hesitate to use `assert(a.shape == (5,1))` to check if your matrix shape is the required one.
   - If you've found a rank one matrix try to run reshape on it.
+  
+ ### Notes from Python Assignment
 - Jupyter / IPython notebooks are so useful library in python that makes it easy to integrate code and document at the same time. It runs in the browser and doesn't need an IDE to run.
   - To open Jupyter Notebook, open the command line and call: `jupyter-notebook` It should be installed to work.
+  
+- Actually, we rarely use the "math" library in deep learning because the inputs of the functions are real numbers. In deep learning we mostly use matrices and vectors. This is why numpy is more useful. 
 - To Compute the derivative of Sigmoid:
 
   ```
@@ -334,6 +344,9 @@ Here are the course summary as its given on the course [link](https://www.course
 
   ```
   v = image.reshape(image.shape[0]*image.shape[1]*image.shape[2],1)  #reshapes the image.
+  # OR
+  v = image.reshape(-1, 1)
+  # https://stackoverflow.com/questions/18691084/what-does-1-mean-in-numpy-reshape
   ```
 
 - Gradient descent converges faster after normalization of the input matrices.
