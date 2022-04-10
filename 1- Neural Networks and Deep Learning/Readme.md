@@ -278,10 +278,11 @@ Here are the course summary as its given on the course [link](https://www.course
   	w2 = w2 - alpha * dw2
   	b = b - alpha * db
   ```
+- The above code is for one pass of the gradient descent.
 
 - The above code should run for some iterations to minimize error.
 
-- So there will be two inner loops to implement the logistic regression.
+- So there will be two inner loops to implement the logistic regression - one for the m training examples and one for calculating the weights.
 
 - Vectorization is so important on deep learning to reduce loops. In the last code we can make the whole loop in one step using vectorization!
 
