@@ -200,10 +200,10 @@ Here are the course summary as its given on the course [link](https://www.course
 
 - `f(a) = a^2`  ==> `d(f(a))/d(a) = 2a`
   - `a = 2`  ==> `f(a) = 4`
-  - `a = 2.0001` ==> `f(a) = 4.0004` approx.
+  - `a = 2.0001` ==> `f(a) = 4.0004` approx. So the relative increase at a=2 is 4 which is equal to the derivative (2*a=2*2=4)
 - `f(a) = a^3`  ==> `d(f(a))/d(a) = 3a^2`
 - `f(a) = log(a)`  ==> `d(f(a))/d(a) = 1/a`
-- To conclude, Derivative is the slope and slope is different in different points in the function thats why the derivative is a function.
+- To conclude, derivative is the slope and slope can be different for different points in the function.
 
 ### Computation graph
 
