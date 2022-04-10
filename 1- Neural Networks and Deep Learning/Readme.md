@@ -165,8 +165,8 @@ Here are the course summary as its given on the course [link](https://www.course
   - But we won't use this notation because it leads us to optimization problem which is non convex, means it contains local optimum points.
 - This is the function that we will use: `L(y',y) = - (y*log(y') + (1-y)*log(1-y'))`
 - To explain the last function lets see:
-  - if `y = 1` ==> `L(y',1) = -log(y')`  ==> we want `y'` to be the largest   ==> `y`' biggest value is 1
-  - if `y = 0` ==> `L(y',0) = -log(1-y')` ==> we want `1-y'` to be the largest ==> `y'` to be smaller as possible because it can only has 1 value.
+  - if `y = 1` ==> `L(y',1) = -log(y')`  ==> we want the loss function to be minimum ==> we want log(`y'`) and hence `y'` to be the largest   ==> `y`' biggest value is 1 since sigmoid is applied
+  - if `y = 0` ==> `L(y',0) = -log(1-y')` ==> we want `1-y'` to be the largest ==> `y'` to be as small as possible which means it can have a value of 0.
 - Then the Cost function will be: `J(w,b) = (1/m) * Sum(L(y'[i],y[i]))`
 - The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set.
 
