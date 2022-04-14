@@ -106,7 +106,7 @@ Here is the course summary as given on the course [link](https://www.coursera.or
 - Vertical edge detection:
   - An example of convolution operation to detect vertical edges:
     - ![](Images/01.png)
-  - In the last example a `6x6` matrix convolved with `3x3` filter/kernel gives us a `4x4` matrix.
+  - In the last example a `6x6` grayscale matrix convolved with `3x3` filter/kernel gives us a `4x4` matrix. The convolution operation invloves element-wise multiplication of the kernel with a part of the image and taking the sum of the numbers to give the final output.
   - If you make the convolution operation in TensorFlow you will find the function `tf.nn.conv2d`. In keras you will find `Conv2d` function.
   - The vertical edge detection filter will find a `3x3` place in an image where there are a bright region followed by a dark region.
   - If we applied this filter to a white region followed by a dark region, it should find the edges in between the two colors as a positive value. But if we applied the same filter to a dark region followed by a white region it will give us negative values. To solve this we can use the abs function to make it positive.
