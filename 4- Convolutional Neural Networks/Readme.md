@@ -108,10 +108,12 @@ Here is the course summary as given on the course [link](https://www.coursera.or
     - ![](Images/01.png)
   - In the last example a `6x6` grayscale matrix convolved with `3x3` filter/kernel gives us a `4x4` matrix. The convolution operation invloves element-wise multiplication of the kernel with a part of the image and taking the sum of the numbers to give the final output.
   - If you make the convolution operation in TensorFlow you will find the function `tf.nn.conv2d`. In keras you will find `Conv2d` function.
-  - The vertical edge detection filter will find a `3x3` place in an image where there are a bright region followed by a dark region.
-  - If we applied this filter to a white region followed by a dark region, it should find the edges in between the two colors as a positive value. But if we applied the same filter to a dark region followed by a white region it will give us negative values. To solve this we can use the abs function to make it positive.
+    - ![](Images/45.png)
+  
+  - The `3x3` vertical edge detection filter will find a `3x3` place in an image where there are a bright region followed by a dark region since it gives more preference(larger weights) to the left side than the right side. So if the left is bright (larger pixel values) and the right is dark (which means maybe negative pixel values), the filter outputs a large positive value indicating a bright followed by a dark(vertical edge).
+  - But if we applied the same filter to a dark region followed by a white region it will give us negative values which means a negative edge.To solve this we can use the abs function to make it positive.
 - Horizontal edge detection
-  - Filter would be like this
+  - Filter would be like this - bright region on top followed by dark at the bottom
 
     ```
     1	1	1
@@ -119,7 +121,7 @@ Here is the course summary as given on the course [link](https://www.coursera.or
     -1	-1	-1
     ```
 
-- There are a lot of ways we can put number inside the horizontal or vertical edge detections. For example here are the vertical **Sobel** filter (The idea is taking care of the middle row):
+- There are a lot of ways we can put number inside the horizontal or vertical edge detections. For example here is the vertical **Sobel** filter (The idea is taking care of the middle row):
 
   ```
   1	0	-1
